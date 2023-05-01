@@ -10,7 +10,7 @@ app.get('/:number', (req, res) => {
 app.get('/sms/:number', (req, res) => {
   const { number } = req.params;
   const phone = number.replace(/[^0-9]/g, '');
-  res.redirect(`sms:${phone}`);
+  res.redirect(`sms://${phone};?&body=`);
 });
 
 app.listen(process.env.PORT, () => {
